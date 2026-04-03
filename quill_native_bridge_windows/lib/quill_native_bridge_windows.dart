@@ -135,7 +135,7 @@ class QuillNativeBridgeWindows extends QuillNativeBridgePlatform {
       final unitSize = sizeOf<Uint8>();
       final htmlSize = (htmlPointer.length + 1) * unitSize;
 
-      final clipboardMemoryHandle = GlobalAlloc(GMEM_MOVEABLE, htmlSize);
+      final clipboardMemoryHandle = GlobalAlloc(0x0002, htmlSize);
       if (clipboardMemoryHandle == nullptr) {
         assert(
           false,
